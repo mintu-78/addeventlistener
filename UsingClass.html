@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="btn">Show 1</button>
+    <button class="btn">Show 2</button>
+    <button class="btn">Show 3</button>
+    <button class="btn">Show 4</button>
+    <button class="btn">Show 5</button>
+    <button class="btn">Show 6</button>
+    <button class="btn">Show 7</button>
+    
+</body>
+</html>
+
+<script>
+
+    // const btn1 = document.getElementById('btn1');
+    // const btn2 = document.getElementById('btn2');
+    // const btn3 = document.getElementById('btn3');
+
+    // btn1.addEventListener("click",function(){
+    //     console.log(this.innerText);
+    // })
+
+    // btn2.addEventListener("click",function(){
+    //     console.log(this.innerText);
+    // })
+
+    const btn = document.getElementsByClassName('btn');
+
+    for(i=0; i<btn.length; i++)
+    {
+
+    btn[i].addEventListener('click',function(){
+        console.log(this.innerText);
+    })
+    }
+    
+
+
+
+</script>
