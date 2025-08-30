@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        #btn {
+            font-size: 18px;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            background: #f0f0f0;
+            transition: background 0.3s ease;
+            align-self: flex-start; /* button left side */
+        }
+        #btn:hover {
+            background: #27b2f8;
+        }
+        #colorCode {
+            margin-top: 590px;   /* push to bottom */
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">🎨 Change Color</button>
+    <p id="colorCode"></p>
+</body>
+</html>
+
+<script>
+    let btn = document.getElementById('btn');
+    let colorCode = document.getElementById('colorCode');
+
+    function randomValue(val){
+        return Math.floor(Math.random() * val);
+    }
+
+    btn.addEventListener("click",function(){
+        let r = randomValue(256);
+        let g = randomValue(256);
+        let b = randomValue(256);
+        let a = (Math.random()).toFixed(2); // alpha 0.00 - 1.00 tak
+
+        let rgba = `rgba(${r}, ${g}, ${b}, ${a})`;
+
+        document.body.style.backgroundColor = rgba;
+        colorCode.textContent = rgba;
+    })
+</script>
